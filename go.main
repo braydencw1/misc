@@ -1,0 +1,64 @@
+package main
+
+import "time"
+
+type SecretResponse struct {
+	AccessRequestWorkflowMapId         int       `json:"accessRequestWorkflowMapId"`
+	Active                             bool      `json:"active"`
+	AllowOwnersUnrestrictedSshCommands bool      `json:"allowOwnersUnrestrictedSshCommands"`
+	AutoChangeEnabled                  bool      `json:"autoChangeEnabled"`
+	AutoChangeNextPassword             string    `json:"autoChangeNextPassword"`
+	CheckedOut                         bool      `json:"checkedOut"`
+	CheckOutChangePasswordEnabled      bool      `json:"checkOutChangePasswordEnabled"`
+	CheckOutEnabled                    bool      `json:"checkOutEnabled"`
+	CheckOutIntervalMinutes            int       `json:"checkOutIntervalMinutes"`
+	CheckOutMinutesRemaining           int       `json:"checkOutMinutesRemaining"`
+	CheckOutUserDisplayName            string    `json:"checkOutUserDisplayName"`
+	CheckOutUserId                     int       `json:"checkOutUserId"`
+	DoubleLockId                       int       `json:"doubleLockId"`
+	EnableInheritPermissions           bool      `json:"enableInheritPermissions"`
+	EnableInheritSecretPolicy          bool      `json:"enableInheritSecretPolicy"`
+	FailedPasswordChangeAttempts       int       `json:"failedPasswordChangeAttempts"`
+	FolderId                           int       `json:"folderId"`
+	Id                                 int       `json:"id"`
+	IsDoubleLock                       bool      `json:"isDoubleLock"`
+	IsOutOfSync                        bool      `json:"isOutOfSync"`
+	IsRestricted                       bool      `json:"isRestricted"`
+	Items                              []Item    `json:"items"`
+	JumpboxRouteId                     string    `json:"jumpboxRouteId"`
+	LastHeartBeatCheck                 time.Time `json:"lastHeartBeatCheck"`
+	LastHeartBeatStatus                string    `json:"lastHeartBeatStatus"`
+	LastPasswordChangeAttempt          time.Time `json:"lastPasswordChangeAttempt"`
+	LauncherConnectAsSecretId          int       `json:"launcherConnectAsSecretId"`
+	Name                               string    `json:"name"`
+	OutOfSyncReason                    string    `json:"outOfSyncReason"`
+	PasswordTypeWebScriptId            int       `json:"passwordTypeWebScriptId"`
+	ProxyEnabled                       bool      `json:"proxyEnabled"`
+	RequiresApprovalForAccess          bool      `json:"requiresApprovalForAccess"`
+	RequiresComment                    bool      `json:"requiresComment"`
+	ResponseCodes                      []string  `json:"responseCodes"`
+	RestrictSshCommands                bool      `json:"restrictSshCommands"`
+	SecretPolicyId                     int       `json:"secretPolicyId"`
+	SecretTemplateId                   int       `json:"secretTemplateId"`
+	SecretTemplateName                 string    `json:"secretTemplateName"`
+	SessionRecordingEnabled            bool      `json:"sessionRecordingEnabled"`
+	SiteId                             int       `json:"siteId"`
+	WebLauncherRequiresIncognitoMode   bool      `json:"webLauncherRequiresIncognitoMode"`
+}
+
+type Item struct {
+	FieldDescription string `json:"fieldDescription"`
+	FieldId          int    `json:"fieldId"`
+	FieldName        string `json:"fieldName"`
+	FileAttachmentId int    `json:"fileAttachmentId"`
+	Filename         string `json:"filename"`
+	IsFile           bool   `json:"isFile"`
+	IsList           bool   `json:"isList"`
+	IsNotes          bool   `json:"isNotes"`
+	IsPassword       bool   `json:"isPassword"`
+	ItemId           int    `json:"itemId"`
+	ItemValue        string `json:"itemValue"`
+	ListType         string `json:"listType"`
+	Slug             string `json:"slug"`
+}
+
