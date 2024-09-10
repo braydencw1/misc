@@ -1,3 +1,4 @@
+
 type ApiResponse struct {
 	BatchCount  int         `json:"batchCount"`
 	CurrentPage int         `json:"currentPage"`
@@ -16,11 +17,40 @@ type ApiResponse struct {
 }
 
 type Record struct {
-	Active            bool   `json:"active"`
-	CategorizedListId string `json:"categorizedListId"`
-	Description       string `json:"description"`
-	Name              string `json:"name"`
-	NumOptions        int    `json:"numOptions"`
+	Active              bool          `json:"active"`
+	AutoChangeEnabled   bool          `json:"autoChangeEnabled"`
+	CheckedOut          bool          `json:"checkedOut"`
+	CheckOutEnabled     bool          `json:"checkOutEnabled"`
+	CheckOutUserId      int           `json:"checkOutUserId"`
+	CheckOutUserName    string        `json:"checkOutUserName"`
+	CreateDate          time.Time     `json:"createDate"`
+	DaysUntilExpiration int           `json:"daysUntilExpiration"`
+	DoubleLockEnabled   bool          `json:"doubleLockEnabled"`
+	ExtendedFields      []ExtendedField `json:"extendedFields"`
+	FolderId            int           `json:"folderId"`
+	FolderPath          string        `json:"folderPath"`
+	HasLauncher         bool          `json:"hasLauncher"`
+	HidePassword        bool          `json:"hidePassword"`
+	Id                  int           `json:"id"`
+	InheritsPermissions bool          `json:"inheritsPermissions"`
+	IsOutOfSync         bool          `json:"isOutOfSync"`
+	IsRestricted        bool          `json:"isRestricted"`
+	LastAccessed        time.Time     `json:"lastAccessed"`
+	LastHeartBeatStatus string        `json:"lastHeartBeatStatus"`
+	LastPasswordChangeAttempt time.Time `json:"lastPasswordChangeAttempt"`
+	Name                string        `json:"name"`
+	OutOfSyncReason     string        `json:"outOfSyncReason"`
+	RequiresApproval    bool          `json:"requiresApproval"`
+	RequiresComment     bool          `json:"requiresComment"`
+	ResponseCodes       []string      `json:"responseCodes"`
+	SecretTemplateId    int           `json:"secretTemplateId"`
+	SecretTemplateName  string        `json:"secretTemplateName"`
+	SiteId              int           `json:"siteId"`
+}
+
+type ExtendedField struct {
+	Name  string `json:"name"`
+	Value string `json:"value"`
 }
 
 type SortField struct {
