@@ -1,0 +1,30 @@
+type ApiResponse struct {
+	BatchCount  int         `json:"batchCount"`
+	CurrentPage int         `json:"currentPage"`
+	HasNext     bool        `json:"hasNext"`
+	HasPrev     bool        `json:"hasPrev"`
+	NextSkip    int         `json:"nextSkip"`
+	PageCount   int         `json:"pageCount"`
+	PrevSkip    int         `json:"prevSkip"`
+	Records     []Record    `json:"records"`
+	Severity    string      `json:"severity"`
+	Skip        int         `json:"skip"`
+	SortBy      []SortField `json:"sortBy"`
+	Success     bool        `json:"success"`
+	Take        int         `json:"take"`
+	Total       int         `json:"total"`
+}
+
+type Record struct {
+	Active            bool   `json:"active"`
+	CategorizedListId string `json:"categorizedListId"`
+	Description       string `json:"description"`
+	Name              string `json:"name"`
+	NumOptions        int    `json:"numOptions"`
+}
+
+type SortField struct {
+	Direction string `json:"direction"`
+	Name      string `json:"name"`
+	Priority  int    `json:"priority"`
+}
